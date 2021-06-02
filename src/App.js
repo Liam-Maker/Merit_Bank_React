@@ -1,37 +1,21 @@
-import './index.css';
-import Navbar from './components/landing/header'
-import Home from './components/Home'
-import CreateUser from './components/CreateUser'
-import Footer from './components/footer'
+import React from 'react';
+import './App.css';
 
-import { Component } from 'react'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Login from './components/Login'
+import Header from './components/Header';
+import Landing from './components/Landing';
+import Footer from './components/Footer';
 
-export class App extends Component {
-  render() {
-    return (
-      <Router>
-        <div>
-          <Navbar />
-          <div className="content">
-            <Switch>
-              <Route exact path="/">
-                <Home />
-              </Route>
-              <Route path="/login">
-                <Login />
-              </Route>
-              <Route path="/createuser">
-                <CreateUser />
-              </Route>
-            </Switch>
-          </div>
-          <Footer />
-        </div>
-      </Router>
-    )
-  }
+class App extends React.Component {
+
+    render() {
+        return (
+            <div className="App">
+                <Header />
+                <Landing />
+                <Footer />
+            </div>
+        );
+    }
 }
 
-export default App
+export default App;
