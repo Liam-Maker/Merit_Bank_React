@@ -14,6 +14,7 @@ const WelcomeUser = () => {
                 {this.state.message}
             </h1>
             <button type="button" class="btn btn-danger">Sign out</button>
+            <button type="button" class="btn btn-danger">Sign out</button>
         </div>
     )
 }
