@@ -20,33 +20,32 @@ class Landing extends React.Component {
                 </div>
 
                 <div className="container">
-                    <div class="row py-4">
-                        <div class="col-md-3 col-sm-6 pb-3 px-2 card-mobile">
-                            <div class="card card-body text-center shadow rounded-lg">
-                                <p><i class="grey-text fab fa-cc-visa fa-3x"></i></p>
+                    <div className="row py-4">
+                        <div className="col-md-3 col-sm-6 pb-3 px-2 card-mobile">
+                            <div className="card card-body text-center shadow rounded-lg">
+                                <p><i className="grey-text fab fa-cc-visa fa-3x"></i></p>
                                 <h4 className="grey-text">Credit Cards</h4>
                                 <p className="grey-text">Lorem ipsum</p>
                             </div>
                         </div>
-                        <div class="col-md-3 col-sm-6 pb-3 px-2 card-mobile">
-                            <div class="card card-body text-center shadow rounded-lg">
-                                <p><i class="grey-text fas fa-dollar-sign fa-3x"></i></p>
-                                <h4 class="grey-text">Competative Interest Rates</h4>
-                                {/* <p className="grey-text">Lorem ipsum</p> */}
-                                <i class=""></i>
+                        <div className="col-md-3 col-sm-6 pb-3 px-2 card-mobile">
+                            <div className="card card-body text-center shadow rounded-lg">
+                                <p><i className="grey-text fas fa-dollar-sign fa-3x"></i></p>
+                                <h4 className="grey-text">Competative Interest Rates</h4>
+                                <i className=""></i>
                             </div>
                         </div>
-                        <div class="col-md-3 col-sm-6 pb-3 px-2 card-mobile">
-                            <div class="card card-body text-center shadow rounded-lg">
-                                <p><i class="grey-text fas fa-tachometer-alt fa-3x"></i></p>
-                                <h4 class="grey-text">Free Credit Score</h4>
+                        <div className="col-md-3 col-sm-6 pb-3 px-2 card-mobile">
+                            <div className="card card-body text-center shadow rounded-lg">
+                                <p><i className="grey-text fas fa-tachometer-alt fa-3x"></i></p>
+                                <h4 className="grey-text">Free Credit Score</h4>
                                 <p className="grey-text">Lorem ipsum</p>
                             </div>
                         </div>
-                        <div class="col-md-3 col-sm-6 pb-3 px-2 card-mobile">
-                            <div class="card card-body text-center shadow rounded-lg">
-                                <p><i class="grey-text fas fa-mobile-alt fa-3x"></i></p>
-                                <h4 class="grey-text">Access</h4>
+                        <div className="col-md-3 col-sm-6 pb-3 px-2 card-mobile">
+                            <div className="card card-body text-center shadow rounded-lg">
+                                <p><i className="grey-text fas fa-mobile-alt fa-3x"></i></p>
+                                <h4 className="grey-text">Access</h4>
                                 <p className="grey-text">Lorem ipsum</p>
                             </div>
                         </div>
@@ -55,10 +54,10 @@ class Landing extends React.Component {
 
 
                 <div className="text-center">
-                    <div class="jumbotron">
-                        <h1 class="display-4">Hello, world!</h1>
-                        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-                        <hr class="my-4" />
+                    <div className="jumbotron">
+                        <h1 className="display-4">Hello, world!</h1>
+                        <p className="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+                        <hr className="my-4" />
                         <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
                     </div>
                 </div>

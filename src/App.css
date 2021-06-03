@@ -2,6 +2,7 @@ body{
   background-color: #f4f4f4;
 }
 
+
 .nav-link{
   border: 1px solid #ffffff;
   border-radius: 5px;
@@ -24,9 +25,7 @@ body{
   cursor: pointer;
 }
 
-.b12{
-  background-image: url('https://images.unsplash.com/photo-1492305175278-3b3afaa2f31f?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max') top center / cover no-repeat;
-}
+
 
 .b13{
   width: 100%; 
@@ -34,28 +33,12 @@ body{
   background: linear-gradient(25deg,rgba(15, 89, 224, 0.65),rgba(22, 11, 189, 0.85))
 }
 
+.b12{
+  background: url('https://images.unsplash.com/photo-1492305175278-3b3afaa2f31f?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max') top center / cover no-repeat;
+}
+
 .b14{
   margin-top: -310px
-}
-
-.b15{
-  border-radius: 50px;
-}
-
-.card1{
-  background-image: url(https://source.unsplash.com/401x601/?business);
-}
-
-.card2{
-  background-image: url(https://source.unsplash.com/402x602/?business)
-}
-
-.card3{
-  background-image: url(https://source.unsplash.com/403x603/?business)
-}
-
-.card4{
-  background-image: url(https://source.unsplash.com/404x604/?business)
 }
 
 .grey-text { 
@@ -130,4 +113,11 @@ body{
 }
 .blog-card:hover .details {
   left: 0%;
+}
+
+.login{
+  background-color: #ffffff;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 30px auto
 }

@@ -1,21 +1,37 @@
 import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import './App.css';
 
 import Header from './components/Header';
 import Landing from './components/Landing';
 import Footer from './components/Footer';
+import Login from './components/Login'
+import AccountHoldersList from './components/AccountHolders'
 
-class App extends React.Component {
 
-    render() {
-        return (
-            <div className="App">
+function App() {
+    return (
+
+        <div className="App">
+            <Router>
                 <Header />
-                <Landing />
+                <Switch>
+                    <Route exact path="/">
+                        <Landing />
+                    </Route>
+                    <Route exact path="/login">
+                        <Login />
+                    </Route>
+                    <Route exact path="/accountholders">
+                        <AccountHoldersList />
+                    </Route>
+                </Switch>
+
                 <Footer />
-            </div>
-        );
-    }
+            </Router>
+        </div>
+
+    );
 }
 
-export default App;
+export default App
