@@ -1,30 +1,49 @@
-import './css/App.css';
-import Navbar from './components/Navbar'
-import Home from './components/Home'
-import { Component } from 'react'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Login from './components/Login'
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import './App.css';
 
-export class App extends Component {
-  render() {
+import Header from './components/Header';
+import Landing from './components/Landing';
+<<<<<<< HEAD
+import Footer from './components/Footer';
+import Login from './components/Login'
+import AccountHoldersList from './components/AccountHolders'
+=======
+import Footer from './components/footer';
+import Welcome from './components/Welcome'
+>>>>>>> f2aeeabceab6d7064a9a0f0ea03b7433a90a08d3
+
+
+function App() {
     return (
-      <Router>
-        <div>
-          <Navbar />
-          <div className="content">
-            <Switch>
-              <Route exact path="/">
-                <Home />
-              </Route>
-              <Route path="/login">
-                <Login />
-              </Route>
-            </Switch>
-          </div>
+
+        <div className="App">
+            <Router>
+                <Header />
+                <Switch>
+                    <Route exact path="/">
+                        <Landing />
+                    </Route>
+                    <Route exact path="/login">
+                        <Login />
+                    </Route>
+                    <Route exact path="/accountholders">
+                        <AccountHoldersList />
+                    </Route>
+                </Switch>
+
+                <Footer />
+<<<<<<< HEAD
+            </Router>
         </div>
-      </Router>
-    )
-  }
+
+    );
+=======
+                
+            </div>
+        );
+    }
+>>>>>>> f2aeeabceab6d7064a9a0f0ea03b7433a90a08d3
 }
 
 export default App
