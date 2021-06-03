@@ -9,5 +9,9 @@ export const fetchToken = (user) => dispatch => {
                 payload: token
             })
         );
+<<<<<<< HEAD
 };
 
+=======
+};
+>>>>>>> e3a85006c59bc20cf05c6e832fae4e95b970d809
