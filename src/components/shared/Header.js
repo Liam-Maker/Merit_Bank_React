@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
-import '../App.css';
+import '../../App.css';
 
 class Header extends React.Component {
 
@@ -11,14 +11,15 @@ class Header extends React.Component {
                     <ul className="nav">
                         <li className="nav-item">
                             <Link className="nav-link" to="/login"><i className="fas fa-user"></i> Login</Link>
-                            <Link className="nav-link" to="/accountholders"><i className="fas fa-user"></i> AccountHolders</Link>
                         </li>
                     </ul>
                 </nav>
 
-                <nav className="navbar sticky-top navbar-expand-lg shadow navbar-light bg-white scrolling-navbar top-nav-collapse">
+                <nav className="navbar navbar-expand-lg shadow navbar-light bg-white">
                     <div className="container">
-                        <img src="/images/logo.png" height="35" alt="logo" />
+                        <Link to="/">
+                            <img src="/images/logo.png" height="35" alt="logo" />
+                        </Link>
                         <ul className="nav ml-auto nav-flex-icons">
                             <li className="nav-item">
                                 <a className="nav-link waves-effect waves-dark">

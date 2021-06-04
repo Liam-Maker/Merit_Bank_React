@@ -2,7 +2,6 @@ body{
   background-color: #f4f4f4;
 }
 
-
 .nav-link{
   border: 1px solid #ffffff;
   border-radius: 5px;
@@ -24,8 +23,6 @@ body{
   color: #5186A8;
   cursor: pointer;
 }
-
-
 
 .b13{
   width: 100%; 
@@ -120,4 +117,8 @@ body{
   border-radius: 5px;
   padding: 20px;
   margin: 30px auto
+}
+
+.page-footer{
+  margin-top: 20px;
 }
