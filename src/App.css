@@ -122,3 +122,31 @@ body{
 .page-footer{
   margin-top: 20px;
 }
+
+.btn-logout{
+  background-color: #535353;
+  color:#ffffff;
+  text-decoration: none;
+  padding: 5px 10px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-logout:hover{
+  text-decoration: none;
+  color:#ecfd00;
+}
+
+/* .admin-container{
+  position: relative;
+} */
+.admin-container {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 0.8fr 1fr 1fr 1fr;
+  grid-template-rows: 0.2fr 3fr;
+  grid-template-areas: 
+  "sidebar nav nav nav"
+  "sidebar main main main";
+}
