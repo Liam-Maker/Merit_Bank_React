@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import { Redirect } from 'react-router-dom'
-
+import { useSelector } from 'react-redux'
 
 function AdminDash() {
-    const [auth, setAuth] = useState(false)
-
+    const isLoggedIn = useSelector(state => state.auth.isLoggedIn)
+    console.log(isLoggedIn)
     const logout = () => {
 
     }
 
-    if (!auth) {
+    if (!isLoggedIn) {
         return <Redirect to="/login" />
     }
 

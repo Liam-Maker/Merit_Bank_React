@@ -1,27 +1,11 @@
-import { configureStore } from '@reduxjs/toolkit'
-import userReducer from '../components/features/userSlice'
+import { createStore, applyMiddleware } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension'
+import thunk from 'redux-thunk'
+import reducers from './reducers/index'
 
-export default configureStore({
-    reducer: {
-        user: userReducer
-    }
-})
+export const store = createStore(reducers, composeWithDevTools(applyMiddleware(thunk)))
 
 
+// const store = createStore(loginReducer, applyMiddleware(thunk));
 
 
-
-
-
-
-
-
-
-
-
-// import { createStore } from 'redux';
-// import loginReducer from './Reducer'
-
-// const store = createStore(loginReducer);
-
-// export default store;

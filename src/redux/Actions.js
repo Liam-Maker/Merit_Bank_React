@@ -1,10 +1,18 @@
-import { LOGIN } from './ActionTypes'
+import { LOG_IN, LOG_OUT } from './ActionTypes'
 
-function loginActionCreater(jwt) {
-    return {
-        type: LOGIN,
-        payload: jwt
+export const logIn = token => {
+    return (dispatch) => {
+        dispatch({
+            type: LOG_IN,
+            payload: token
+        })
     }
 }
 
-export default loginActionCreater
+export const logOut = () => {
+    return (dispatch) => {
+        dispatch({
+            type: LOG_OUT
+        })
+    }
+}

@@ -1,16 +1,22 @@
 import React, { useState } from 'react'
-import { connect } from 'react-redux'
-
+import { useSelector, useDispatch } from 'react-redux'
+import { bindActionCreators } from 'redux'
+// import { actionCreators } from '../redux/index'
+import { logIn } from '../redux/Actions'
 import { useHistory } from 'react-router-dom'
 import { Form, Button } from 'react-bootstrap';
 import axios from 'axios'
 import { BASE_URL_ADD } from '../ResourceEndpoints'
-import loginActionCreater from '../redux/Actions'
 
-function Login(props) {
-    console.log(props.token)
+function Login() {
+    const role = useSelector(state => state.auth.role)
+    const dispatch = useDispatch();
+
+    // const { logIn } = bindActionCreators(actionCreators, dispatch)
+
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+
     //For page redirect
     const history = useHistory();
 
@@ -29,13 +35,20 @@ function Login(props) {
         //Call the authentication endpoint
         axios.post(BASE_URL_ADD, user).then(res => {
             console.log(res.data)
-            console.log('jwt: ', res.data.jwt)
-            props.loginActionCreater(res.data.jwt)
+            dispatch(logIn(res.data))
         }).catch(err => {
             console.log(err.message)
         })
 
-        history.push("/admin")
+        if (role === "[ROLE_ADMIN]") {
+            history.push("/admin")
+        }
+        else if (role === "[ROLE_USER]") {
+            history.push("/user")
+        }
+        else {
+            history.push("/login")
+        }
     }
 
     return (
@@ -58,16 +71,18 @@ function Login(props) {
     )
 }
 
-const mapStateToProps = state => {
-    return {
-        token: state.token
-    }
-}
+// const mapStateToProps = state => {
+//     return {
+//         token: state.token
+//     }
+// }
 
-const mapDispatchToProps = dispatch => {
-    return {
-        loginActionCreater: (jwt) => dispatch(loginActionCreater(jwt))
-    }
-}
+// const mapDispatchToProps = dispatch => {
+//     return {
+//         loginActionCreater: (jwt) => dispatch(loginActionCreater(jwt))
+//     }
+// }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Login)
+// export default connect(mapStateToProps, mapDispatchToProps)(Login)
+
+export default Login
