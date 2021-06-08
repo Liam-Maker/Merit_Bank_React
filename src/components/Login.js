@@ -1,21 +1,18 @@
-import React, { useState } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
-import { bindActionCreators } from 'redux'
-// import { actionCreators } from '../redux/index'
-import { logIn } from '../redux/Actions'
+import React, { useState, useEffect, useContext } from 'react'
 import { useHistory } from 'react-router-dom'
+import { AuthorizationContext } from '../AuthorizationContext'
 import { Form, Button } from 'react-bootstrap';
 import axios from 'axios'
 import { BASE_URL_ADD } from '../ResourceEndpoints'
 
 function Login() {
-    const role = useSelector(state => state.auth.role)
-    const dispatch = useDispatch();
+    const [auth, setAuth] = useContext(AuthorizationContext)
 
-    // const { logIn } = bindActionCreators(actionCreators, dispatch)
-
+    // const [jwt, setJwt] = useState('');
+    // const [role, setRole] = useState('')
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    //for redirect
 
     //For page redirect
     const history = useHistory();
@@ -25,39 +22,54 @@ function Login() {
         password: password
     }
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
+    // useEffect()
 
+    async function handleSubmit(e) {
+        e.preventDefault();
         //Clear the form
         setUsername('')
         setPassword('')
 
         //Call the authentication endpoint
         axios.post(BASE_URL_ADD, user).then(res => {
-            console.log(res.data)
-            dispatch(logIn(res.data))
+            setAuth({
+                jwt: res.data.jwt,
+                role: res.data.roles,
+                isLoggedIn: true
+            });
+            console.log('token from fetch', res.data)
+            // setRole(res.data.roles)
+            // setJwt(res.data.jwt)
+            // console.log('role from fetch', res.data.roles)
+
+            if (res.data != null) {
+                if (res.data.roles === "[ROLE_ADMIN]") {
+                    history.push("/admin")
+                }
+                if (res.data.roles === "[ROLE_USER]") {
+                    history.push("/user")
+                }
+
+            }
         }).catch(err => {
             console.log(err.message)
         })
 
-        if (role === "[ROLE_ADMIN]") {
-            history.push("/admin")
-        }
-        else if (role === "[ROLE_USER]") {
-            history.push("/user")
-        }
-        else {
-            history.push("/login")
-        }
+
+    }
+
+
+    const updateName = (e) => {
+        setUsername(e.target.value)
     }
 
     return (
         <div className="container login" style={{ width: 400 }}>
-            <Form onSubmit={handleSubmit}>
+            <Form onSubmit={e => handleSubmit(e)}>
                 <h2 className="text-center">Log In</h2>
                 <Form.Group controlId="formBasicEmail">
                     <Form.Label>User Name</Form.Label>
-                    <Form.Control onChange={e => setUsername(e.target.value)} name="username" autoComplete="off" type="text" placeholder="Enter email" value={username} />
+                    <Form.Control onChange={updateName} name="username" autoComplete="off" type="text" placeholder="Enter email" value={username} />
                 </Form.Group>
 
                 <Form.Group controlId="formBasicPassword" className="mb-3">

@@ -1,8 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import { Provider } from 'react-redux'
-import { store } from './redux/Store'
-
+import { AuthorizationProvider } from './AuthorizationContext'
 import Header from './components/shared/Header'
 import Login from './components/Login'
 import AccountHolders from './components/accountholders/AccountHolders'
@@ -10,10 +8,10 @@ import Landing from './components/Landing'
 import Footer from './components/shared/Footer'
 import AdminDashboard from './components/admin_dashboard/AdminDash'
 import UserDashboard from './components/user_dashboard/UserDash'
-
+import CheckingAccount from './components/checkingaccount/CheckingAccount'
 function App() {
     return (
-        <Provider store={store}>
+        <AuthorizationProvider>
             <Router >
                 <Header />
                 <Switch>
@@ -32,10 +30,13 @@ function App() {
                     <Route exact path="/accountholders">
                         <AccountHolders />
                     </Route>
+                    <Route exact path="/checkingaccount">
+                        <CheckingAccount />
+                    </Route>
                 </Switch>
                 <Footer />
             </Router>
-        </Provider>
+        </AuthorizationProvider>
     );
 }
 

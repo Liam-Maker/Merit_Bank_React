@@ -150,3 +150,21 @@ body{
   "sidebar nav nav nav"
   "sidebar main main main";
 }
+
+.aside{
+  padding: 15px;
+  width: 200px;
+  height: 100vh;
+  background-color: #000000;
+  color: #fff;
+  position: fixed;
+  top: 60px;
+  left: 0;
+  z-index: 100;
+}
+
+.aside a{
+
+  color: #fff;
+
+}
