@@ -9,6 +9,8 @@ import Footer from './components/shared/Footer'
 import AdminDashboard from './components/admin_dashboard/AdminDash'
 import UserDashboard from './components/user_dashboard/UserDash'
 import CheckingAccount from './components/checkingaccount/CheckingAccount'
+import AddCDOfferings from './components/CDOfferings/AddCDOfferings'
+import CDAccount from './components/cd_account/CDAccount'
 function App() {
     return (
         <AuthorizationProvider>
@@ -32,6 +34,12 @@ function App() {
                     </Route>
                     <Route exact path="/checkingaccount">
                         <CheckingAccount />
+                    </Route>
+                    <Route exact path="/cdofferings">
+                        <AddCDOfferings />
+                    </Route>
+                    <Route exact path='/cdaccount'>
+                        <CDAccount />
                     </Route>
                 </Switch>
                 <Footer />
